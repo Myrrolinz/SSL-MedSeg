@@ -5,7 +5,7 @@ from torch.utils.data import Dataset
 from PIL import Image
 from solo.data.pretrain_dataloader import FullTransformPipeline
 
-from data.acdc_utils import construct_samples_list, split_samples_list
+from acdc_utils import construct_samples_list, split_samples_list
 
 # Computed on the labelled dataset
 DATASET_MEAN = 67.27297657740893
@@ -123,15 +123,15 @@ class ACDCDatasetUnlabeleld(Dataset):
 if __name__== "__main__":
     from tabulate import tabulate 
 
-    train_set = ACDCDatasetAlbu("~/data/acdc/training", subset_ratio=0.1)
+    train_set = ACDCDatasetAlbu("training", subset_ratio=0.1)
     print(tabulate(train_set.samples))
     print ("Train len =", len(train_set))
-    val_set = ACDCDatasetAlbu("~/data/acdc/training", split='val')
+    val_set = ACDCDatasetAlbu("training", split='val')
     print ("Val len =", len(val_set))
-    test_set = ACDCDatasetAlbu("~/data/acdc/training", split='test')
+    test_set = ACDCDatasetAlbu("training", split='test')
     print ("Test len =", len(test_set))
 
-    unlabelled = ACDCDatasetUnlabeleld("~/data/acdc/training")
+    unlabelled = ACDCDatasetUnlabeleld("training")
     print ("Unlabelled len =", len(unlabelled))
-    unlabelled_val = ACDCDatasetUnlabeleld("~/data/acdc/training", split='val')
+    unlabelled_val = ACDCDatasetUnlabeleld("training", split='val')
     print ("Unlabelled len =", len(unlabelled_val))

@@ -9,7 +9,7 @@ experiment_name: "ACDC"
 wandb_tag: ""
 
 dataset: "acdc"
-dataset_root: "~/data/acdc/training/" 
+dataset_root: "/workspaces/SSL-MedSeg/data/acdc/training" 
 subset_ratio: 1.0
 
 artifacts_root: "artifacts-acdc/supervised"

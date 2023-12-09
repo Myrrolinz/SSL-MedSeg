@@ -19,7 +19,7 @@ import utils
 PRED_FOLDER = "inference"
 
 def generate_prediction_pdfs(checkpoint_path: str,
-                             dataset_root = "~/data/acdc/training",
+                             dataset_root = "/workspaces/SSL-MedSeg/data/acdc/training",
                              num_samples = 10000,
                              output_folder=".",
                              merge_prediction_pdfs=True,

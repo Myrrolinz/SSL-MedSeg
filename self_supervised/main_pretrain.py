@@ -19,6 +19,7 @@
 
 import inspect
 import os
+import sys
 
 import hydra
 import torch
@@ -61,10 +62,13 @@ from solo.utils.momentum import initialize_momentum_params
 from solo.methods.base import BaseMomentumMethod
 from solo.data.pretrain_dataloader import dataset_with_index
 
-from self_supervised.weights_saver import WeightsSaver
-from self_supervised.timm_encoder import timm_create_model_wrapper
-from models.pretrained_models import get_state_dict_form_pretrained_model_zoo
-from data.acdc_dataset import ACDCDatasetUnlabeleld
+from weights_saver import WeightsSaver
+from timm_encoder import timm_create_model_wrapper
+sys.path.append('/workspaces/SSL-MedSeg/models')
+from pretrained_models import get_state_dict_form_pretrained_model_zoo
+sys.path.append('/workspaces/SSL-MedSeg/data')
+from acdc_dataset import ACDCDatasetUnlabeleld
+sys.path.append('/workspaces/SSL-MedSeg/utils')
 import utils
 
 

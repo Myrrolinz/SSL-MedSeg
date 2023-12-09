@@ -141,3 +141,4 @@ trained_models/
 *.ckpt
 
 data/acdc/
+data/acdc.zip

@@ -1,7 +1,7 @@
 defaults:
   - _self_
   - augmentations: acdc.yaml
-  - wandb: private.yaml
+
   - override hydra/hydra_logging: disabled
   - override hydra/job_logging: disabled
 
@@ -29,7 +29,7 @@ momentum:
 data:
   dataset: "custom"
   custom_dataset_name: "acdc"
-  train_path: "~/data/acdc/training"
+  train_path: "/workspaces/SSL-MedSeg/data/acdc/training"
   format: "image_folder" # data format, supports "image_folder", "dali" or "h5"
   num_workers: 10
   # set this to True if the dataset is not stored as subfolders for each class
